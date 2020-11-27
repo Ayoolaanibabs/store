@@ -1,0 +1,40 @@
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "fullName": "Toli Anibaba",
+    "email": "toli@yahoo.com",
+    "mobileNumber": "081278453328",
+    "address": "awojobi, loco harcourt",
+    "gender": "female",
+    "password": "password1"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "ayoolaanibabs@gmail.com",
+    "password": "password"
+}
+
+###
+POST http://localhost:3000/suggest
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NDkwMTQzLCJleHAiOjE2MDY0OTM3NDN9.7--O324oxXJUaWAwr_vlulrfQG0HryzOGPgOKyOtgc4
+Content-Type: application/json
+
+{
+    "itemName": "televison21",
+    "itemDescription": "42 inches television set",
+    "itemCategory":"electronic",
+    "reason": "For watching football"
+}
+
+###
+GET http://localhost:3000/suggested
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NDkwMTQzLCJleHAiOjE2MDY0OTM3NDN9.7--O324oxXJUaWAwr_vlulrfQG0HryzOGPgOKyOtgc4
+
+###
+GET http://localhost:3000/suggested/electronics
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NDkwMTQzLCJleHAiOjE2MDY0OTM3NDN9.7--O324oxXJUaWAwr_vlulrfQG0HryzOGPgOKyOtgc4
