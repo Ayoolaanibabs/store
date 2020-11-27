@@ -1,11 +1,14 @@
 express = require('express');
 mongoose = require('mongoose');
+const cors = require('cors');
+app = express();
+
 const AuthRoute = require('./routes/auth');
 const suggestRoute = require('./routes/suggestRoute');
 const suggestedRoute = require('./routes/suggestedRoute');
 const { verifyAccessToken } = require('./middleware/authMiddleware')
-app = express();
 
+app.use(cors());
 
 app.use(express.json());
 
@@ -19,16 +22,7 @@ mongoose.connect(db, {
 }).then(()=>{
     console.log('Mongodb connected')
 });
-/*
-app.use((req,res,next)=>{
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    if(req.method === 'OPTIONS') {
-        res.header('Access-Control-Allow-Methods', '*');
-        return res.status(200).json({})
-    }
-});
-*/
+
 app.use('/auth', AuthRoute);
 
 app.use('/suggest',verifyAccessToken, suggestRoute);
@@ -36,7 +30,23 @@ app.use('/suggest',verifyAccessToken, suggestRoute);
 app.use('/suggested',verifyAccessToken, suggestedRoute);
 
 
+app.use((req, res, next)=>{
+    res.status(404);
+    res.send({
+        error: 'Not Found'
+    })
+    next(err)
+});
 
+app.use((error, req, res, next)=>{
+    res.status(error.status || 500)
+    res.send({
+        error: {
+            status: error.status || 500,
+            message: error.message
+        }
+    })
+});
 app.listen(3000, ()=>{
     console.log('Now running on port 3000!')
 })

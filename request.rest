@@ -2,12 +2,12 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "fullName": "Toli Anibaba",
-    "email": "toli@yahoo.com",
+    "fullName": "dare loko",
+    "email": "dare@gmail.com",
     "mobileNumber": "081278453328",
     "address": "awojobi, loco harcourt",
     "gender": "female",
-    "password": "password1"
+    "password": "password91"
 }
 
 ###
@@ -21,20 +21,20 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/suggest
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NDkwMTQzLCJleHAiOjE2MDY0OTM3NDN9.7--O324oxXJUaWAwr_vlulrfQG0HryzOGPgOKyOtgc4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NTE4Mzk3LCJleHAiOjE2MDY1MjE5OTd9.t98rNoeslfTFaLIYoNbg_WMrDYhoa8TJyTKgdhi10EQ
 Content-Type: application/json
 
 {
-    "itemName": "televison21",
+    "itemName": "televison809",
     "itemDescription": "42 inches television set",
-    "itemCategory":"electronic",
+    "itemCategory":"electronics",
     "reason": "For watching football"
 }
 
 ###
 GET http://localhost:3000/suggested
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NDkwMTQzLCJleHAiOjE2MDY0OTM3NDN9.7--O324oxXJUaWAwr_vlulrfQG0HryzOGPgOKyOtgc4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NTE4Mzk3LCJleHAiOjE2MDY1MjE5OTd9.t98rNoeslfTFaLIYoNbg_WMrDYhoa8TJyTKgdhi10EQ
 
 ###
 GET http://localhost:3000/suggested/electronics
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NDkwMTQzLCJleHAiOjE2MDY0OTM3NDN9.7--O324oxXJUaWAwr_vlulrfQG0HryzOGPgOKyOtgc4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkF5b29sYSBBbmliYWJhIiwiaWF0IjoxNjA2NTE4Mzk3LCJleHAiOjE2MDY1MjE5OTd9.t98rNoeslfTFaLIYoNbg_WMrDYhoa8TJyTKgdhi10EQ
